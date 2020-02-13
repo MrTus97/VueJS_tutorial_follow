@@ -4,16 +4,27 @@
       v-bind:Keymsg="msg"
       v-on:changeTitleEvent="handleChangeTitle"
       />
+    
     <list-user 
       v-bind:listUser="listUser"
       v-on:deleteUserEvent="handleDeleteUser"
       />
+      <demo-ref/>
+      <demo-slot>
+        <div class="app-slot">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error natus nihil excepturi distinctio explicabo totam cum unde corrupti commodi! Culpa harum magni, libero accusantium obcaecati illum dolor quos eveniet maxime.</p>
+        </div>
+      </demo-slot>
+
+
   </div>
 </template>
 
 <script>
-import CompHeader from './components/CompHeader'
-import ListUser from './components/ListUser'
+import CompHeader from './components/CompHeader';
+import ListUser from './components/ListUser';
+import DemoRef from './components/DemoRef';
+import DemoSlot from './components/DemoSlot';
 export default {
   name: 'app',
   data () {
@@ -31,7 +42,9 @@ export default {
   },
   components: {
     CompHeader,
-    ListUser
+    ListUser,
+    DemoRef,
+    DemoSlot,
   },
   methods:{
     handleChangeTitle(){
@@ -60,6 +73,4 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-
-
 </style>
